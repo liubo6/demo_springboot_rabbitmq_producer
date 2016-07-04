@@ -1,0 +1,20 @@
+#########################--mysql--########################
+spring:
+    rabbitmq:
+      host: 127.0.0.1
+      port: 5672
+      password: guest
+      username: guest
+      virtual-host: /
+      listener:
+        auto-startup: true
+server:
+  port: 8080
+  display-name: "liubo-loan"
+  tomcat:
+    accesslog:
+      directory: /opt/logs/
+      prefix: acesslog
+      suffix: .log
+        # 使用druid数据源
+#########################--mysql end--########################
