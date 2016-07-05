@@ -1,7 +1,5 @@
 package com.liubo.demo.rabbitmq.producer.person.controller;
 
-import com.liubo.demo.rabbitmq.producer.person.model.PersonDO;
-import com.liubo.demo.rabbitmq.producer.person.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,5 +17,11 @@ public class PersonController {
     public String addPerson(PersonDO personDO) throws Exception {
 
         return personService.addPerson(personDO);
+    }
+
+    @RequestMapping(value = "/test")
+    public String StringMsg(String test) throws Exception {
+
+        return "ok";
     }
 }
