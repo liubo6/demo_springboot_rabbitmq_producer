@@ -35,8 +35,8 @@ public class PersonServiceImpl implements PersonService {
         Assert.hasText(personDO.getId(), "添加对象信息ID 不能为空");
         Assert.hasText(personDO.getUserId(), "添加对象信息用户编号不能为空");
         Assert.notNull(personDO.getAge(), "添加对象信息年龄不能为空");
-        Message message = buildMessage(personDO);
-        template.convertAndSend(AmqpConfig.EXCHANGE, AmqpConfig.ROUTINGKEY, message);
+
+        template.convertAndSend(AmqpConfig.EXCHANGE, AmqpConfig.ROUTINGKEY, personDO);
         return true;
     }
 
