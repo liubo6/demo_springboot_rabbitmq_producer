@@ -32,7 +32,7 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public boolean addPerson(PersonDO personDO) throws Exception {
         Assert.notNull(personDO, "添加对象信息不能为空");
-        Assert.hasText(personDO.getId(), "添加对象信息ID 不能为空");
+
         Assert.hasText(personDO.getUserId(), "添加对象信息用户编号不能为空");
         Assert.notNull(personDO.getAge(), "添加对象信息年龄不能为空");
 

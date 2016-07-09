@@ -66,11 +66,11 @@ public class AmqpConfig {
      * FanoutExchange: 将消息分发到所有的绑定队列，无routingkey的概念
      * HeadersExchange ：通过添加属性key-value匹配
      * DirectExchange:按照routingkey分发到指定队列
-     * TopicExchange:多关键字匹配
+     * DirectExchange:多关键字匹配
      */
     @Bean
-    public TopicExchange exchange() {
-        return new TopicExchange(EXCHANGE);
+    public DirectExchange exchange() {
+        return new DirectExchange(EXCHANGE);
     }
 
     /**
@@ -91,7 +91,7 @@ public class AmqpConfig {
      * @return
      */
     @Bean
-    public Binding binding(Queue queue, TopicExchange exchange) {
+    public Binding binding(Queue queue, DirectExchange exchange) {
         return BindingBuilder.bind(queue()).to(exchange()).with(AmqpConfig.ROUTINGKEY);
     }
 
