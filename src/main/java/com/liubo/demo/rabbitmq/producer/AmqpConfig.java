@@ -102,12 +102,12 @@ public class AmqpConfig {
         return new Jackson2JsonMessageConverter();
     }
 
-    @Bean
-    public CharacterEncodingFilter characterEncodingFilter() {
-        CharacterEncodingFilter filter = new CharacterEncodingFilter();
-        filter.setEncoding("UTF-8");
-        filter.setForceEncoding(true);
-        return filter;
-    }
+//    @Bean
+//    public CharacterEncodingFilter characterEncodingFilter() {
+//        CharacterEncodingFilter filter = new CharacterEncodingFilter();
+//        filter.setEncoding("UTF-8");
+//        filter.setForceEncoding(true);
+//        return filter;
+//    }
 
 }

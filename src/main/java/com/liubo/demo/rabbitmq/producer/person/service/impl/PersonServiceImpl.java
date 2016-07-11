@@ -3,6 +3,8 @@ package com.liubo.demo.rabbitmq.producer.person.service.impl;
 import com.liubo.demo.rabbitmq.person.model.PersonDO;
 import com.liubo.demo.rabbitmq.person.service.PersonService;
 import com.liubo.demo.rabbitmq.producer.AmqpConfig;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageBuilder;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -18,7 +20,7 @@ import java.util.UUID;
  */
 @Service
 public class PersonServiceImpl implements PersonService {
-
+    private Logger logger =  LoggerFactory.getLogger(this.getClass());
     @Autowired
     private RabbitTemplate template;
 

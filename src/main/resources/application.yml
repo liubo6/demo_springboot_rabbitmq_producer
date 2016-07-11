@@ -16,5 +16,12 @@ server:
       directory: /opt/logs/
       prefix: acesslog
       suffix: .log
+    uri-encoding: UTF-8
+  context-path: /liubo-loan # 访问路径，比如 localhost:8080/liubo-loan
+
+logging:
+  file: ./springboot.log
+  level: info
+
         # 使用druid数据源
 #########################--mysql end--########################
