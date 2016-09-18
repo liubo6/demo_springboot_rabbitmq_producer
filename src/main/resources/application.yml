@@ -1,8 +1,8 @@
 #########################--mysql--########################
 spring:
     rabbitmq:
-      host: 121.43.226.133
-      port: 5672
+      host: seaof-153-125-234-175.jp-tokyo-10.arukascloud.io
+      port: 31827
       password: guest
       username: guest
       virtual-host: /

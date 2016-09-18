@@ -20,7 +20,7 @@ import java.util.UUID;
  */
 @Service
 public class PersonServiceImpl implements PersonService {
-    private Logger logger =  LoggerFactory.getLogger(this.getClass());
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     private RabbitTemplate template;
 
@@ -39,6 +39,18 @@ public class PersonServiceImpl implements PersonService {
         Assert.notNull(personDO.getAge(), "添加对象信息年龄不能为空");
 
         template.convertAndSend(AmqpConfig.EXCHANGE, AmqpConfig.ROUTINGKEY, personDO);
+//        template.setConfirmCallback(new RabbitTemplate.ConfirmCallback() {
+//            @Override
+//            public void confirm(CorrelationData correlationData, boolean ack, String cause) {
+//                if (!ack) {
+//                    logger.info("send message failed: " + cause); //+ correlationData.toString());
+//                    throw new RuntimeException("send error " + cause);
+//                } else {
+//                    logger.info("send to broke ok" + correlationData.getId());
+//                }
+//            }
+//        });
+
         return true;
     }
 
