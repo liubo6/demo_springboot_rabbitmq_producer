@@ -19,12 +19,11 @@ public class PersonController {
 
     @RequestMapping(value = "/add",method = RequestMethod.POST)
     public boolean addPerson(@RequestBody PersonDO personDO) throws Exception {
-        if (personDO == null) {
-            personDO.setId("1");
-            personDO.setAge(20);
-            personDO.setUserId("100");
-            personDO.setUserName("liubo");
+        for (int i = 0; i < 1000; i++) {
+                personService.addPerson(personDO);
         }
+
+
         return personService.addPerson(personDO);
     }
 
